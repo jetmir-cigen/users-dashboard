@@ -8,9 +8,7 @@ const MainLayout = () => {
     <div className="d-flex">
       <SideBar />
       <div className="wrapper d-flex flex-column min-vh-100 bg-light w-100">
-        <div className="body flex-grow-1 px-3"
-            
-        >
+        <div className="body flex-grow-1 px-3">
           <CContainer lg className="min-vh-100">
             <Outlet />
           </CContainer>

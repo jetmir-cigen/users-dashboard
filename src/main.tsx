@@ -9,16 +9,17 @@ import "@coreui/coreui/dist/css/coreui.min.css";
 
 //Routes
 import router from "./routes";
+import Loading from "./components/Loading/Loading";
 
 //React-Query init
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Suspense fallback={<h1>Loading!!!!</h1>}>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <Suspense fallback={<Loading />}>
         <RouterProvider router={router} />
-      </QueryClientProvider>
-    </Suspense>
+      </Suspense>
+    </QueryClientProvider>
   </React.StrictMode>
 );
