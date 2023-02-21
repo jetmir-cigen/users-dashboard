@@ -7,21 +7,20 @@ interface Props {
   onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<Props> = ({
-  currentPage,
-  totalPages,
-  onPageChange,
-}) => {
+const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageChange }) => {
+  // Handles click event of a pagination item
   const handleClick = (page: number) => {
     onPageChange(page);
   };
 
+  // Handles click event of the previous button
   const handlePrev = () => {
     if (+currentPage > 1) {
       onPageChange(currentPage - 1);
     }
   };
 
+  // Handles click event of the next button
   const handleNext = () => {
     if (+currentPage < totalPages) {
       onPageChange(currentPage + 1);
@@ -30,22 +29,17 @@ const Pagination: React.FC<Props> = ({
 
   return (
     <CPagination align="center" aria-label="Page navigation example">
-      <CPaginationItem
-        onClick={handlePrev}
-        disabled={+currentPage === 1}
-        aria-label="Previous"
-      >
+      {/* Previous button */}
+      <CPaginationItem onClick={handlePrev} disabled={+currentPage === 1} aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </CPaginationItem>
+      {/* Pagination items */}
       {[...Array(totalPages)].map((_, i) => (
-        <CPaginationItem
-          key={i}
-          onClick={() => handleClick(i + 1)}
-          active={i + 1 === +currentPage}
-        >
+        <CPaginationItem key={i} onClick={() => handleClick(i + 1)} active={i + 1 === +currentPage}>
           {i + 1}
         </CPaginationItem>
       ))}
+      {/* Next button */}
       <CPaginationItem
         onClick={handleNext}
         disabled={+currentPage === totalPages}

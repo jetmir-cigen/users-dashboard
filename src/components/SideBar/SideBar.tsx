@@ -1,41 +1,29 @@
-import React, { useState } from "react";
-import {
-  CSidebar,
-  CSidebarBrand,
-  CSidebarNav,
-  CSidebarToggler,
-} from "@coreui/react";
-
-import { cilHome } from "@coreui/icons";
-
-
-import navigation from '../../_nav'
-
-
+import { NavLink } from "react-router-dom";
+import { CNavItem, CSidebar, CSidebarBrand, CSidebarNav } from "@coreui/react";
+import { cilHome, cilUser } from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 
-import { AppSidebarNav } from "../AppSidebarNav/AppSidebarNav";
-
 function SideBar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
   return (
     <CSidebar
       visible={true}
-      onVisibleChange={(visible) => {
-        setIsSidebarOpen(visible);
-      }}
       style={{
         minHeight: "100vh",
       }}
     >
+      {/* Sidebar branding */}
       <CSidebarBrand className="d-none d-md-flex">
         <CIcon className="sidebar-brand-full" height={35} icon={cilHome} />
       </CSidebarBrand>
+
+      {/* Sidebar navigation */}
       <CSidebarNav>
-          <AppSidebarNav items={navigation} />
+        {/* Users link */}
+        <CNavItem component={NavLink} to="/">
+          <CIcon icon={cilUser} customClassName="nav-icon" />
+          Users
+        </CNavItem>
       </CSidebarNav>
-      
     </CSidebar>
   );
 }

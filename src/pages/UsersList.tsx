@@ -22,26 +22,29 @@ import { useQueryFilters } from "../hooks/useQueryFilters";
 
 import { debounce, extractIdFromUrl } from "../helpers";
 
+// Create a class to hold the filters for the user list
 class ListFilters extends BaseFilters {
   page: number = 1;
   search?: string = "";
 }
 
 const UsersList = () => {
+  // Get the filters, location, and onFilterChange function from the useQueryFilters hook
   const { filters, location, onFilterChange } = useQueryFilters<ListFilters>();
 
-  const query = useQuery<ListResponse<User>>(
-    [`users`, filters],
-    () => getAllUsers(location.search),
-    { refetchOnWindowFocus: false }
-  );
+  // Use the useQuery hook to fetch the user list
+  const query = useQuery<ListResponse<User>>([`users`, filters], () => getAllUsers(location.search), {
+    refetchOnWindowFocus: false,
+  });
 
   const navigate = useNavigate();
 
+  // Handle when a user is clicked by navigating to their details page
   const onUserClicked = (id?: string) => {
     if (id) navigate(`/${id}`);
   };
 
+  // Handle changes to the search input with a debounced function
   const handleInputChange = useCallback(
     debounce((event: React.ChangeEvent<HTMLInputElement>) => {
       onFilterChange({ search: event.target.value || undefined });

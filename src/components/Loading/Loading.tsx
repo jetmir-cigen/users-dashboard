@@ -2,6 +2,7 @@ import React from "react";
 import { CSpinner } from "@coreui/react";
 
 const Loading: React.FC = () => {
+  // Styles for the overlay and spinner
   const loaderStyle: React.CSSProperties = {
     position: "fixed",
     top: 0,
@@ -23,6 +24,7 @@ const Loading: React.FC = () => {
   };
 
   return (
+    // Wrapper for the overlay and spinner
     <div style={contentStyle}>
       <div style={loaderStyle}>
         <CSpinner color="dark" style={{ width: "8rem", height: "8rem" }} />
