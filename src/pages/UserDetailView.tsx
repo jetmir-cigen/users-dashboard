@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { CCol, CContainer, CRow } from "@coreui/react";
+import { CCard, CCardBody, CCol, CContainer, CRow } from "@coreui/react";
 
 import { getUserById } from "../api/users/getUserById";
 
@@ -28,41 +28,163 @@ const UserDetailView: React.FC = () => {
       {query.isLoading && <Loading />}
       {/* If the data has been loaded, render the user details */}
       {query.data && (
-        <CRow className="bg-white">
-          <CCol xs={{ span: 4 }}>
-            <h5>Name:</h5>
-            <div>Luke Skywalker</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Birth Year:</h5>
-            <div>19 BBY</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Height:</h5>
-            <div>172</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Mass:</h5>
-            <div>77</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Gender:</h5>
-            <div>Male</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Eye Color:</h5>
-            <div>Blue</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Skin Color:</h5>
-            <div>Fair</div>
-          </CCol>
-          <CCol xs={{ span: 4 }}>
-            <h5>Hair Color:</h5>
-            <div>Blond</div>
-          </CCol>
-        </CRow>
+        <CCard className="mb-3">
+          <CCardBody>
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Full Name</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">Luke Skywalker</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Birth Year</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">19 BBY</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Height</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">172</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Mass</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">77</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Gender</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">Male</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Eye Color</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">Blue</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Hair Color</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">Blonde</p>
+              </CCol>
+            </CRow>
+            <hr />
+            <CRow className="row">
+              <CCol sm={{ span: 3 }}>
+                <p className="mb-0">Skin Color</p>
+              </CCol>
+              <CCol sm={{ span: 9 }}>
+                <p className="text-muted mb-0">Fair</p>
+              </CCol>
+            </CRow>
+          </CCardBody>
+        </CCard>
       )}
+      <CRow>
+        <CCol lg={{ span: 3 }}>
+          <CCard
+            className="mb-4 mb-md-0"
+            style={{
+              height: "17.6rem",
+              overflowY: "auto",
+            }}
+          >
+            <CCardBody>
+              <p className="mb-4">
+                <span className="text-primary font-italic me-1">assigment</span>
+                Project Status
+              </p>
+            </CCardBody>
+          </CCard>
+        </CCol>
+        <CCol lg={{ span: 3 }}>
+          <CCard
+            style={{
+              height: "17.6rem",
+              overflowY: "auto",
+            }}
+            className="mb-4 mb-md-0"
+          >
+            <CCardBody>
+              <p className="mb-4">
+                <span className="text-primary font-italic me-1">assigment</span>
+                Project Status
+              </p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+            </CCardBody>
+          </CCard>
+        </CCol>
+        <CCol lg={{ span: 3 }}>
+          <CCard
+            style={{
+              height: "17.6rem",
+              overflowY: "auto",
+            }}
+            className="mb-4 mb-md-0"
+          >
+            <CCardBody>
+              <p className="mb-4">
+                <span className="text-primary font-italic me-1">assigment</span>
+                Project Status
+              </p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+              
+            </CCardBody>
+          </CCard>
+        </CCol>
+        <CCol lg={{ span: 3 }}>
+          <CCard
+            style={{
+              height: "17.6rem",
+              overflowY: "auto",
+            }}
+            className="mb-4 mb-md-0"
+          >
+            <CCardBody>
+              <p className="mb-4">
+                <span className="text-primary font-italic me-1">assigment</span>
+                Project Status
+              </p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+              <p>Test</p>
+            </CCardBody>
+          </CCard>
+        </CCol>
+      </CRow>
     </CContainer>
   );
 };

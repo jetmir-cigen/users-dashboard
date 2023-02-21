@@ -72,7 +72,7 @@ const UsersList = () => {
           <CTable hover>
             <CTableHead>
               <CTableRow>
-                <CTableHeaderCell scope="col">Url</CTableHeaderCell>
+                <CTableHeaderCell scope="col">ID</CTableHeaderCell>
                 <CTableHeaderCell scope="col">Name</CTableHeaderCell>
                 <CTableHeaderCell scope="col">Birth Year</CTableHeaderCell>
                 <CTableHeaderCell scope="col">Eye Color</CTableHeaderCell>
@@ -82,7 +82,7 @@ const UsersList = () => {
             <CTableBody>
               {query?.data?.results.map((item) => (
                 <CTableRow onClick={() => onUserClicked(extractIdFromUrl(item.url))} key={item.url}>
-                  <CTableHeaderCell scope="row">{item.url}</CTableHeaderCell>
+                  <CTableHeaderCell scope="row">{extractIdFromUrl(item.url)}</CTableHeaderCell>
                   <CTableDataCell>{item.name}</CTableDataCell>
                   <CTableDataCell>{item.birth_year}</CTableDataCell>
                   <CTableDataCell>{item.eye_color}</CTableDataCell>
