@@ -7,9 +7,6 @@ export const getUserById = async (id: string) => {
     // with the provided user ID as a path parameter
     const response = await api.get(`people/${id}`);
 
-    // Log the response (for debugging purposes)
-    console.log({ response });
-
     // Return the data from the response
     return response.data;
   } catch (err) {
