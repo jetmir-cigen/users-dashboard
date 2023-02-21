@@ -5,7 +5,7 @@ import MainLayout from "./layout/MainLayout";
 
 // Import lazy-loaded page components
 const UsersList = React.lazy(() => import("./pages/UsersList"));
-const UserDetailView = React.lazy(() => import("./pages/UserDetailView/UserDetailView"));
+const UserDetailView = React.lazy(() => import("./pages/UserDetailView"));
 
 // Create the application router
 const router = createBrowserRouter([
